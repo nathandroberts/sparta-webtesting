@@ -21,13 +21,11 @@ class SeleniumQatoolsForm
   end
 
   def input_firstname_field(text)
-    @first_name = text
-    @chrome_driver.find_element(:name, FIRST_NAME_FIELD_NAME).send_keys(@first_name)
+    @chrome_driver.find_element(:name, FIRST_NAME_FIELD_NAME).send_keys(text)
   end
 
   def input_lastname_field(text)
-    @second_name = text
-    @chrome_driver.find_element(:name, LAST_NAME_FIELD_NAME).send_keys(@second_name)
+    @chrome_driver.find_element(:name, LAST_NAME_FIELD_NAME).send_keys(text)
   end
 
   def input_sex_radio
@@ -58,8 +56,8 @@ class SeleniumQatoolsForm
   end
 
   def input_commands_select
-    select_ = @chrome_driver.find_element(:id, COMMANDS_FIELD_ID)
-    all_options = select_.find_elements(:tag_name, "option")
+    all = @chrome_driver.find_element(:id, COMMANDS_FIELD_ID)
+    all_options = all.find_elements(:tag_name, "option")
     all_options[1].click
     sleep 2
   end
