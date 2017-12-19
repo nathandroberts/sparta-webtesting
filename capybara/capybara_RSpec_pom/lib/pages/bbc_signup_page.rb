@@ -12,9 +12,11 @@ class BbcSignupPage
   EMAIL_FIELD_ID = 'user-identifier-input'
   PASSWORD_FIELD_ID = 'password-input'
   POSTCODE_FIELD_ID = 'postcode-input'
-  GENDER_SELECTOR_ID = 'gender-input'
+  GENDER_SELECTOR = 'Gender'
+  GENDER = 'Male'
   NO_THANKS_BUTTON_CLASS = 'button-text'
   REGISTER_BUTTON_ID = 'submit-button'
+  EMAIL_ERROR_TEXT_ID = 'form-message-email'
 
 
   def visit_register_page
@@ -58,7 +60,7 @@ class BbcSignupPage
   end
 
   def fill_in_email(email)
-    fill_in(EMAIL_FIELD_ID, with: email)
+    fill_in(EMAIL_FIELD_ID, with: "#{rand(10000000)}#{email}")
   end
 
   def fill_in_password(password)
@@ -69,8 +71,20 @@ class BbcSignupPage
     fill_in(POSTCODE_FIELD_ID, with: postcode)
   end
 
-  def fill_in_postcode(postcode)
-    fill_in(POSTCODE_FIELD_ID, with: postcode)
+  def select_gender
+    select(GENDER, from: GENDER_SELECTOR)
+  end
+
+  def click_no_thanks_button
+    find(:xpath, ".//label[@for='optOut']/div/div").click
+  end
+
+  def click_register_button
+    find_button(REGISTER_BUTTON_ID).click
+  end
+
+  def incorrect_email_text
+    find(:id, EMAIL_ERROR_TEXT_ID).text
   end
 
 end
