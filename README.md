@@ -11,13 +11,16 @@ A repo created to practice UI testing. Page object models were created for each 
 
 
 ### Terminal commands to set up rspec
-* gem install rspec
-* From the root folder: rspec --init
-* After tests are created: rspec
+` gem install rspec`
+
+`From the root folder: rspec --init`
+
+` After tests are created: rspec`
 
 ### Terminal commands to install selenium and capybara
-* gem install selenium
-* gem install capybara
+```gem install selenium ```
+
+``` gem install capybara ```
 
 ### Documentation
 capybara: http://www.rubydoc.info/github/jnicklas/capybara
