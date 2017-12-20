@@ -24,6 +24,9 @@ A repo created to practice UI testing. Page object models were created for each 
 
 ### Documentation
 capybara: http://www.rubydoc.info/github/jnicklas/capybara
+
 cheat sheet: https://gist.github.com/zhengjia/428105
+
 selenium: http://www.rubydoc.info/gems/selenium-webdriver/3.8.0
+
 cheat sheet: https://gist.github.com/huangzhichong/3284966
